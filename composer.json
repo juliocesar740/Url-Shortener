@@ -1,0 +1,11 @@
+{
+    "name": "julio/url-shortener",
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.3"
+    }
+}
