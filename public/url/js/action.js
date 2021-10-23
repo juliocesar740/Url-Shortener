@@ -16,7 +16,7 @@ export default class Action {
 
    constructor() { }
 
-   // Event input  for #input_url element
+   // Event input for #input_url element
    inputUrlEvent(e) {
 
       if (e.target.value.length !== 0) {
@@ -78,7 +78,7 @@ export default class Action {
             document.getElementById('popup-input-url').value = functions.generateUrl();
             document.querySelector('.popup').style.opacity = '1';
             document.querySelector('.popup').style.zIndex = '1';
-            document.querySelector('.popup').style.transform = 'scale(1.10,1.10)';
+            document.querySelector('.popup').style.transform = 'translate(-50%,-50%) scale(1.10,1.10)';
             document.querySelector('main').style.filter = 'blur(3px)';
          }
       }
@@ -89,8 +89,8 @@ export default class Action {
          });
 
          document.querySelector('.popup').style.opacity = '0';
-         document.querySelector('.popup').style.zIndex = '-1';
-         document.querySelector('.popup').style.transform = 'scale(0.25,0.25)';
+         document.querySelector('.popup').style.zIndex = '-2';
+         document.querySelector('.popup').style.transform = 'translate(-50%,-50%) scale(0.25,0.25)';
          document.querySelector('main').style.filter = 'blur(0px)';
       }
    }
@@ -187,8 +187,6 @@ export default class Action {
 
    // Event resize for window object
    WindowResize() {
-
-      console.log('a')
 
       if (window.outerWidth <= 1191) {
 

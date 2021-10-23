@@ -112,11 +112,10 @@ elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
          <button id="btn-submit" type="submit">Save</button>
       </form>
    </div>
-
    <div class="popup-description">
       <h3>Description</h3>
       <div id="close-popup-description">x</div>
-      <textarea id="popup-description" maxlength="145" readonly></textarea>
+      <textarea id="popup-description" maxlength="145" readonly>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae id iste consectetur aspernatur est molestiae autem recusandae eos reprehenderit, accusantium corporis laborum nesciunt debitis illum.</textarea>
    </div>
    <div class="popup-original-url">
       <h3>Original url</h3>
