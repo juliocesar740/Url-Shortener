@@ -3,8 +3,8 @@
 use app\database\Database;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
-require_once './functions.php';
-require_once '../constants.php';
+require_once '../../functions.php';
+require_once '../../constants.php';
 
 // load environment variables
 $dotenv = Dotenv\Dotenv::createImmutable($ROOT_PATH);
