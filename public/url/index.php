@@ -22,9 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
    $select = $getResults['select']; // get all the data from the database's table short links
    $rows = $getResults['rows'];  // get all the rows from the database's table short links
-   
-}
-elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+} elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
    handlePost($database);
 }
 
@@ -36,7 +35,6 @@ elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Url Shortener</title>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -70,14 +68,14 @@ elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
                      <tr class="row">
                         <td><a href=<?php echo 'http://localhost/url/' . substr($value['shorten_url'], 14) ?> target="_blank" data-source=<?php echo 'http://localhost/url/' . substr($value['shorten_url'], 14) ?>><?php echo $value['shorten_url'] ?></a></td>
                         <td>
-                           <p class="show-original-url" data-original_url="<?php echo $value['original_url'] ?>"><?php echo $value['original_url'] ?></p>
+                           <p class="show-original-url" ><?php echo $value['original_url'] ?></p>
                         </td>
                         <td>
                            <p><?php echo $value['clicks'] ?></p>
                         </td>
                         <td>
                            <div>
-                              <p class="show-description" data-description="<?php echo $value['description'] ?>">See description</p>
+                              <p class="show-description"><?php echo $value['description'] ?></p>
                            </div>
                         </td>
                         <td>
@@ -111,16 +109,6 @@ elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
          <span id="characters-number">0 / 145</span>
          <button id="btn-submit" type="submit">Save</button>
       </form>
-   </div>
-   <div class="popup-description">
-      <h3>Description</h3>
-      <div id="close-popup-description">x</div>
-      <textarea id="popup-description" maxlength="145" readonly>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae id iste consectetur aspernatur est molestiae autem recusandae eos reprehenderit, accusantium corporis laborum nesciunt debitis illum.</textarea>
-   </div>
-   <div class="popup-original-url">
-      <h3>Original url</h3>
-      <div id="close-popup-original-url">x</div>
-      <div id="show-popup-original-url"></div>
    </div>
    <div class="popup-warning">
       <p>Invalid url!</p>
