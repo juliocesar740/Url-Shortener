@@ -50,7 +50,7 @@ function handlePost(Database $database)
    // delete a shorten url
    if (isset($_POST['delete-row'])) {
 
-      $delete_row_id = filter_var($_POST['delete-row'], FILTER_SANITIZE_STRING);
+      $delete_row_id = htmlspecialchars($_POST['delete-row'],ENT_QUOTES);
       $database->deleteRow($delete_row_id);
       header('location:/url');
       exit;
@@ -68,7 +68,7 @@ function handlePost(Database $database)
 
    $original_url = filter_var($_POST['original_url'], FILTER_SANITIZE_URL);
    $short_url = filter_var($_POST['short_url'], FILTER_SANITIZE_URL);
-   $description = filter_var($_POST['description'], FILTER_SANITIZE_STRING);
+   $description = htmlspecialchars($_POST['description'],ENT_QUOTES);
    $database->addDatabase($original_url, $short_url, $description);
 
    header('location:/url');
